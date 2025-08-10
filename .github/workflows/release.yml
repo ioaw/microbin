@@ -1,4 +1,4 @@
-name: GitHub and Docker Release
+name: GitHub Release
 
 on:
   push:
@@ -143,6 +143,13 @@ jobs:
             tar czf $archive *
             echo "::set-output name=archive::$archive"
         fi
+
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: memos-armv7-bin
+        path: memos_linux_armv7
+        retention-days: 3
 
     - name: Publish Archive
       uses: softprops/action-gh-release@v0.1.15
