@@ -64,10 +64,6 @@ jobs:
           os: ubuntu-latest
           use-cross: true
           cargo-flags: "--no-default-features"
-        - target: mips64el-unknown-linux-gnuabi64
-          os: ubuntu-latest
-          use-cross: true
-          cargo-flags: "--no-default-features"
     runs-on: ${{matrix.os}}
 
     steps:
